@@ -188,11 +188,10 @@ class IPaper:
 if __name__ == "__main__":
     pdf_path = "./pdfs"
 
-    # OLLMA_HOST = "localhost:11434"
-    # MODEL = "qwen3:32b"
-    # MODEL = "deepseek-r1:7b"
     instance = IPaper(host="localhost:11434", model="deepseek-r1:7b",
                       meta_dir="indexdb")
 
-    #instance.build_faiss_index(pdf_path, index_path, chunks_path)
-    instance.start_chat(index_path, chunks_path)
+    # 建立索引
+    instance.build_faiss_index(pdf_path)
+    # 进行对话
+    #instance.start_chat()
